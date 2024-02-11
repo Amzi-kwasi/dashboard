@@ -3,13 +3,9 @@ import Head from "../component/header";
 import { Link } from "react-router-dom";
 import Button from "../component/button";
 
+function Alrt(){
+  alert("Sign In")
 
-var opera=document.getElementsByClassName("opera");
-
-for(var i=0; i< opera.length; i++){
-    opera[i].addEventListener("click",()=>{
-        alert("Sign In");
-    })
 }
 
 function Home() {
@@ -18,8 +14,10 @@ var username= localStorage.getItem("username");
     return(
     <>
     <Head />
-    <Button />
 
+    <Link to="/usersettings">
+    <Button />
+    </Link>
 
     <br/>
     <br/>
@@ -69,10 +67,12 @@ var username= localStorage.getItem("username");
   <br/>
 
 
+
+
   <div className="opp-row">
     <div className="operations">
         <center>
-<div className="opera" style={{color:"white",width:"75px",cursor:"pointer",borderRadius:"8px",height:"90px",background:"#92bbe2",boxShadow:"2px 2px 10px 1px #a3a3a3"}}>
+<div className="opera" onClick={Alrt} style={{color:"white",width:"75px",cursor:"pointer",borderRadius:"8px",height:"90px",background:"#92bbe2",boxShadow:"2px 2px 10px 1px #a3a3a3"}}>
 <center>
     <a><i className="fa fa-list-alt" style={{color:"white",paddingTop:"20px"}}></i></a>
     <p style={{fontSize:"12px"}}>Account Balance</p>
@@ -83,7 +83,7 @@ var username= localStorage.getItem("username");
     </div>
     <div className="operations">
     <center>
-<div className="opera" style={{color:"white",width:"75px",cursor:"pointer",borderRadius:"8px",height:"90px",background:"#73e2e1",boxShadow:"2px 2px 10px 1px #a3a3a3"}}>
+<div className="opera" onClick={Alrt} style={{color:"white",width:"75px",cursor:"pointer",borderRadius:"8px",height:"90px",background:"#73e2e1",boxShadow:"2px 2px 10px 1px #a3a3a3"}}>
 <center>
     <a><i className="fa fa-flag-o" style={{color:"white",paddingTop:"20px"}}></i></a>
     <p style={{fontSize:"12px"}}>Mini Statement</p>
@@ -95,7 +95,7 @@ var username= localStorage.getItem("username");
     </div>
     <div className="operations">
     <center>
-<div className="opera" style={{color:"white",width:"75px",cursor:"pointer",borderRadius:"8px",height:"90px",background:"#f29d78",boxShadow:"2px 2px 10px 1px #a3a3a3"}}>
+<div className="opera" onClick={Alrt} style={{color:"white",width:"75px",cursor:"pointer",borderRadius:"8px",height:"90px",background:"#f29d78",boxShadow:"2px 2px 10px 1px #a3a3a3"}}>
 <center>
     <a><i className="fa fa-refresh" style={{color:"white",paddingTop:"20px"}}></i></a>
     
@@ -110,7 +110,7 @@ var username= localStorage.getItem("username");
   <div className="opp-row">
     <div className="operations">
         <center>
-<div className="opera" style={{color:"white",width:"75px",cursor:"pointer",borderRadius:"8px",height:"90px",background:"#92bbe2",boxShadow:"2px 2px 10px 1px #a3a3a3"}}>
+<div className="opera" onClick={Alrt} style={{color:"white",width:"75px",cursor:"pointer",borderRadius:"8px",height:"90px",background:"#92bbe2",boxShadow:"2px 2px 10px 1px #a3a3a3"}}>
 <center>
     <a><i className="fa fa-vcard-o" style={{color:"white",paddingTop:"20px"}}></i></a>
     <p style={{fontSize:"12px"}}>Loan Application</p>
@@ -121,7 +121,7 @@ var username= localStorage.getItem("username");
     </div>
     <div className="operations">
     <center>
-<div className="opera" style={{color:"white",width:"75px",cursor:"pointer",borderRadius:"8px",height:"90px",background:"#73e2e1",boxShadow:"2px 2px 10px 1px #a3a3a3"}}>
+<div className="opera" onClick={Alrt} style={{color:"white",width:"75px",cursor:"pointer",borderRadius:"8px",height:"90px",background:"#73e2e1",boxShadow:"2px 2px 10px 1px #a3a3a3"}}>
 <center>
     <a><i className="fa fa-exclamation-circle" style={{color:"white",paddingTop:"20px"}}></i></a>
     <p style={{fontSize:"12px"}}>Loan Status</p>
@@ -133,7 +133,7 @@ var username= localStorage.getItem("username");
     </div>
     <div className="operations">
     <center>
-<div className="opera" style={{color:"white",width:"75px",cursor:"pointer",borderRadius:"8px",height:"90px",background:"#f29d78",boxShadow:"2px 2px 10px 1px #a3a3a3"}}>
+<div className="opera" onClick={Alrt} style={{color:"white",width:"75px",cursor:"pointer",borderRadius:"8px",height:"90px",background:"#f29d78",boxShadow:"2px 2px 10px 1px #a3a3a3"}}>
 <center>
     <a><i className="fa fa-briefcase" style={{color:"white",paddingTop:"20px"}}></i></a>
     <p style={{fontSize:"12px"}}>Loan Balance</p>
@@ -144,6 +144,11 @@ var username= localStorage.getItem("username");
     </div>
   </div>
   
+
+  <br/>
+  <br/>
+  <br/>
+  <br/>
     </>
 
 )

@@ -3,6 +3,14 @@
     border: 0;
 }
 
+.hide{
+    display: none;
+}
+
+.view{
+    display: "";
+}
+
 body{
     overflow-x: hidden;
     background-color: #f2f8f8;
@@ -38,7 +46,6 @@ a, p, i {
     padding-top: 20px;
     padding-bottom: 20px;
     padding-right: 20px;
-    max-height: 200px;
     box-shadow: 2px 2px 20px 1px #636262;
 }
 
@@ -90,7 +97,7 @@ background: none;
 }
 
 
-form{
+.form{
 	background: white;
 	margin-top: 75px;
 	padding-left: 20px;
@@ -107,7 +114,7 @@ form{
 }
 
 @media only screen and (max-width: 1023px){
-form {
+.form {
     
     margin-right: 40px;
     margin-left: 40px;
@@ -115,7 +122,7 @@ form {
 
 }
 @media only screen and (width: 1024px){
-    form{
+    .form{
     margin-right: 300px;
     margin-left: 300px;
     }
@@ -123,7 +130,7 @@ form {
 
 
 @media only screen and (width: 1000px){
-    form{
+    .form{
     margin-right: 300px;
     margin-left: 300px;
     }
@@ -131,7 +138,7 @@ form {
 
 
 @media only screen and (max-width: 240px){
-    form{
+    .form{
     margin-right: 20px;
     margin-left: 20px;
     }
@@ -147,3 +154,166 @@ input{
 	color: black;
 	border:none;
 }
+
+
+/*--------------------------------------------------------------
+# Profie Page
+--------------------------------------------------------------*/
+.profile .profile-card img {
+    max-width: 120px;
+  }
+  
+  .profile .profile-card h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #2c384e;
+    margin: 10px 0 0 0;
+  }
+  
+  .profile .profile-card h3 {
+    font-size: 18px;
+  }
+  
+  .profile .profile-card .social-links a {
+    font-size: 20px;
+    display: inline-block;
+    color: rgba(1, 41, 112, 0.5);
+    line-height: 0;
+    margin-right: 10px;
+    transition: 0.3s;
+  }
+  
+  .profile .profile-card .social-links a:hover {
+    color: #012970;
+  }
+  
+  .profile .profile-overview .row {
+    margin-bottom: 20px;
+    font-size: 15px;
+  }
+  
+  .profile .profile-overview .card-title {
+    color: #012970;
+  }
+  
+  .profile .profile-overview .label {
+    font-weight: 600;
+    color: rgba(1, 41, 112, 0.6);
+  }
+  
+  .profile .profile-edit label {
+    font-weight: 600;
+    color: rgba(1, 41, 112, 0.6);
+  }
+  
+  .profile .profile-edit img {
+    max-width: 120px;
+  }
+
+  
+ .nav-item {
+    margin-bottom: 5px;
+  }
+
+  button{
+    text-decoration: none;
+  }
+  
+  
+ .nav-link {
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    font-weight: 600;
+    transition: 0.3;
+    color: black !important;
+    background: #f6f9ff;
+    padding: 10px 15px;
+    border-radius: 4px;
+  }
+  
+   .nav-link i {
+    font-size: 16px;
+    margin-right: 10px;
+  }
+  
+   .nav-link.collapsed {
+    color: #012970;
+    background: #fff;
+  }
+  
+   .nav-link.collapsed i {
+    color: #899bbd;
+  }
+  
+   .nav-link:hover {
+    color: #4154f1;
+    background: #f6f9ff;
+  }
+  
+   .nav-link:hover i {
+    color: #4154f1;
+  }
+
+  
+/* Card */
+.card {
+    margin-bottom: 30px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 0 30px rgba(1, 41, 112, 0.1);
+  }
+  
+  .card-header,
+  .card-footer {
+    border-color: #ebeef4;
+    background-color: #fff;
+    color: #798eb3;
+    padding: 15px;
+  }
+  
+  .card-title {
+    padding: 20px 0 15px 0;
+    font-size: 18px;
+    font-weight: 500;
+    color: #012970;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  .card-title span {
+    color: #899bbd;
+    font-size: 14px;
+    font-weight: 400;
+  }
+  
+  .card-body {
+    padding: 0 20px 20px 20px;
+  }
+  
+  .card-img-overlay {
+    background-color: rgba(255, 255, 255, 0.6);
+  }
+  
+
+  #userback{
+    position: fixed;
+    bottom: 30px;
+    right:20px;
+    padding: 10px 12px;
+    background-color: orange;
+    border-radius: 20px;
+    animation-name: back;
+    animation-duration: 3s;
+    animation-timing-function: none;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
+
+  @keyframes back{
+    0%{
+        bottom: 80px;
+    }
+    100%{
+        bottom: 30px;
+    }
+  }

@@ -94,7 +94,7 @@ function passwordV(){
 
   return (
     <div className="formdata" onLoad={Formd()}>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="form">
       <a style={{fontSize:"20px",cursor:"pointer"}} onClick={()=>{window.history.back()}}>&times;</a>
         <legend style={{textAlign:"center",fontSize: "25px",color: "orange"}}>Sign Up</legend>
         
