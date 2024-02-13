@@ -439,10 +439,10 @@ th {
   border-style: solid;
   border-width: 0;
 }
-
+/* 
 label {
   display: inline-block;
-}
+} */
 
 button {
   border-radius: 0;
@@ -3051,10 +3051,10 @@ textarea.form-control-lg {
 }
 
 .btn-primary {
-  --bs-btn-color: #fff;
+  --bs-btn-color: black;
   --bs-btn-bg: #0d6efd;
   --bs-btn-border-color: #0d6efd;
-  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-color: black
   --bs-btn-hover-bg: #0b5ed7;
   --bs-btn-hover-border-color: #0a58ca;
   --bs-btn-focus-shadow-rgb: 49, 132, 253;
@@ -3136,10 +3136,10 @@ textarea.form-control-lg {
 }
 
 .btn-danger {
-  --bs-btn-color: #fff;
+  --bs-btn-color: black;
   --bs-btn-bg: #dc3545;
   --bs-btn-border-color: #dc3545;
-  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-color: black;
   --bs-btn-hover-bg: #bb2d3b;
   --bs-btn-hover-border-color: #b02a37;
   --bs-btn-focus-shadow-rgb: 225, 83, 97;
@@ -8996,6 +8996,8 @@ textarea.form-control-lg {
 
 .rounded-circle {
   border-radius: 50% !important;
+  width: 120px;
+  height: 120px;
 }
 
 .rounded-pill {

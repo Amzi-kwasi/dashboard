@@ -1,5 +1,6 @@
 {
   "name": "dashbod",
+  "homepage": "https://amzi-kwasi.github.io/dashboard/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

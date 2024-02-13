@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route} from "react-router-dom";
 import Home from "./pages/home.jsx";
 import Register from "./pages/register"
 import UserSet from "./pages/usersettings.jsx";
+import Error from "./pages/404page.jsx";
 
 
 function App() {
@@ -9,10 +10,11 @@ function App() {
 <BrowserRouter>
 <Routes>
   <Route>
-    <Route path="/" element={<Home />} />
-    <Route path="register" element={<Register />} />
+    <Route path="*" element={<Register />} />
+    <Route path="home" element={<Home />} />
     <Route path="usersettings" element={<UserSet />} />
-  </Route>
+    <Route path="/" element={<Error />} />
+    </Route>
 </Routes>
 </BrowserRouter>
     );

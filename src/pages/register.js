@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 
 
@@ -35,6 +36,16 @@ function User(){
 
 function Formd(){
 setTimeout(()=>{
+  var firstload=localStorage.getItem("first");
+
+  if(firstload != "1"){
+    document.getElementById("fd").style.display="block";
+
+    localStorage.setItem("first","1");
+  }
+  else{
+    window.location.assign("/home")
+  }
   document.getElementById("username").value= localStorage.getItem("username");
 
 }, 1000);
@@ -48,6 +59,7 @@ function Register() {
   const [message, setMessage] = useState("");
 
   let handleSubmit = async (e) => {
+
     e.preventDefault();
     try {
       let res = await fetch("https://3.141.195.251/Auth/register", {
@@ -74,6 +86,8 @@ function Register() {
     } catch (err) {
       console.log(err);
     }
+
+
   };
 
 function passwordV(){
@@ -93,7 +107,7 @@ function passwordV(){
 }
 
   return (
-    <div className="formdata" onLoad={Formd()}>
+    <div className="formdata" id="fd" onLoad={Formd()}>
       <form onSubmit={handleSubmit} className="form">
       <a style={{fontSize:"20px",cursor:"pointer"}} onClick={()=>{window.history.back()}}>&times;</a>
         <legend style={{textAlign:"center",fontSize: "25px",color: "orange"}}>Sign Up</legend>
@@ -102,21 +116,21 @@ function passwordV(){
         <br/>
         <label for="username">
             <p>Username</p>
-            <input  type="text"
+            <input className="form_input" type="text"
           value={username}
           placeholder="username" id="username" onKeyUp={User}
           onChange={(e) => setName(e.target.value)} required/>
         </label>
         <label for="fullname">
             <p>Fullname</p>
-            <input  type="text"
+            <input className="form_input" type="text"
           value={fullname}
           placeholder="Fullname" id="fullname"
           onChange={(e) => setFullname(e.target.value)} required/>
         </label>
         <label for="password">
             <p>Password</p>
-            <input type="password"
+            <input className="form_input"type="password"
           value={passwordhash} onKeyUp={passwordV}
           placeholder="At least 8 characters" id="password"
           onChange={(e) => setPasswordhash(e.target.value)} required/>
@@ -124,7 +138,9 @@ function passwordV(){
         <br/>
         <br/>
         <br/>
-        <input type="submit" style={{background:"orange", color:"white"}} name="submit" id="submit"/>
+        <Link to="/usersettings">
+        <input className="form_input"type="submit" style={{background:"orange", color:"white"}} name="submit" id="submit"/>
+        </Link>
         <div className="message">{message ? <p>{message}</p> : null}</div>
     </form>
     </div>

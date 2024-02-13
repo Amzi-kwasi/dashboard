@@ -1,7 +1,8 @@
 import Head from "../component/header";
 import "../bootstrap.css";
 import "../style.css";
-
+import { Link } from "react-router-dom";
+import Dev from "./developer";
 
 
 function Overview(){
@@ -88,6 +89,22 @@ function SaveChanges(){
 }
 
 
+function ChangeImage(){
+  var inputimg=document.getElementById("image-input");
+  var datafile=inputimg.files[0];
+  var filereader= new FileReader();
+  var topimg=document.getElementById("topimg")
+   filereader.readAsDataURL(datafile);
+
+
+  filereader.addEventListener("load", () => {
+    var url=filereader.result;
+    topimg.src= url;
+    localStorage.setItem("topimg", url);
+
+  })
+}
+
 function Profile(){
   setTimeout(()=>{
     document.getElementById("fullname").value=localStorage.getItem("fulln");
@@ -114,6 +131,11 @@ function Profile(){
     document.getElementById("overviewaddress").innerHTML=localStorage.getItem("address")
     document.getElementById("overviewphone").innerHTML=localStorage.getItem("phone")
     document.getElementById("overviewemail").innerHTML=localStorage.getItem("email")
+
+
+
+var localsurl=localStorage.getItem("topimg");
+document.getElementById("topimg").src=localsurl;
   },1000)
  
 }
@@ -137,7 +159,7 @@ export default function UserSet() {
       <div className="card">
         <div className="card-body profile-card pt-4 d-flex flex-column align-items-center">
 
-          <img src="assets/img/profile-img.jpg" alt="Profile" className="rounded-circle" />
+          <img  alt="Profile Image" id="topimg" className="rounded-circle" />
           <h2 id="topfullname"></h2>
           <h3 id="topjob"></h3>
          
@@ -231,10 +253,10 @@ export default function UserSet() {
                 <div className="row mb-3">
                   <label for="profileImage" className="col-md-4 col-lg-3 col-form-label">Profile Image</label>
                   <div className="col-md-8 col-lg-9">
-                    <img src="assets/img/profile-img.jpg" alt="Profile" />
+                    <input type="file" onChange={ChangeImage} id="image-input" accept="image"/>
                     <div className="pt-2">
-                      <a href="#" className="btn btn-primary btn-sm" title="Upload new profile image"><i className="bi bi-upload"></i></a>
-                      <a href="#" className="btn btn-danger btn-sm" title="Remove my profile image"><i className="bi bi-trash"></i></a>
+                      <label for="image-input"><a className="btn btn-primary btn-sm" title="Upload new profile image"><i className="fa fa-upload"></i></a></label>
+                      <a href="#" className="btn btn-danger btn-sm" title="Remove my profile image" onClick={()=>{localStorage.removeItem("topimg"); window.location.reload()}}><i className="fa fa-trash-o"></i></a>
                     </div>
                   </div>
                 </div>
@@ -399,8 +421,11 @@ export default function UserSet() {
 
 </main>
 
+<Link to="/home">
+<button id="userback">Home</button>
+</Link>
 
-<button id="userback" onClick={()=>{window.location.assign('/')}}>Back</button>
+<Dev />
         </div>
     )
 }

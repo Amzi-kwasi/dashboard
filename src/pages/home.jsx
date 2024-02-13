@@ -2,11 +2,14 @@ import "../style.css"
 import Head from "../component/header";
 import { Link } from "react-router-dom";
 import Button from "../component/button";
+import Dev from "./developer";
 
 function Alrt(){
   alert("Sign In")
 
 }
+
+
 
 function Home() {
 var username= localStorage.getItem("username");
@@ -15,6 +18,8 @@ var username= localStorage.getItem("username");
     <>
     <Head />
 
+<Dev />
+
     <Link to="/usersettings">
     <Button />
     </Link>
@@ -22,10 +27,10 @@ var username= localStorage.getItem("username");
     <br/>
     <br/>
     <br/>
-    
+{/*     
     <Link to="/register">
     <p style={{color:"orange",left:"10px",position:"absolute",top:"50px"}}>Sign Up</p>
-    </Link>
+    </Link> */}
 
 
     <Link to="/">
