@@ -156,6 +156,12 @@ background: none;
 }
 
 
+.entry{
+  margin-top: 250px;
+ font-size: 30px;
+ display: none;
+}
+
 .devtab{
   z-index: 999;
   background-color: #1a1a1a;

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-
+import Dev from "./developer";
 
 
 // var usernamefield=document.getElementById("username");
@@ -38,13 +38,15 @@ function Formd(){
 setTimeout(()=>{
   var firstload=localStorage.getItem("first");
 
-  if(firstload != "1"){
+  if(firstload == "1"){
     document.getElementById("fd").style.display="block";
 
-    localStorage.setItem("first","1");
   }
   else{
-    window.location.assign("/home")
+    document.getElementById("fd").style.display="none";
+    document.getElementById("entry").style.display="block";
+   
+    localStorage.setItem("first","1");
   }
   document.getElementById("username").value= localStorage.getItem("username");
 
@@ -107,6 +109,18 @@ function passwordV(){
 }
 
   return (
+    
+    <>
+
+    <Dev />
+    <Link to="/home">
+    <div className="entry" id="entry">
+      <center>
+      <a>DASHBOARD</a>
+      </center>
+    </div>
+    </Link>
+
     <div className="formdata" id="fd" onLoad={Formd()}>
       <form onSubmit={handleSubmit} className="form">
       <a style={{fontSize:"20px",cursor:"pointer"}} onClick={()=>{window.history.back()}}>&times;</a>
@@ -144,6 +158,7 @@ function passwordV(){
         <div className="message">{message ? <p>{message}</p> : null}</div>
     </form>
     </div>
+    </>
   );
 }
 
