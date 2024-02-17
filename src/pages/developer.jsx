@@ -3,7 +3,8 @@ document.addEventListener("keydown", (e)=>{
     if(e.altKey && e.ctrlKey && e.key==="d"){
        var code= prompt("Code");
  if(code == "009900"){
-    dev.style.display="block"
+    dev.style.display="block";
+    document.getElementById("devinput").focus();
  }
     }
     if(e.key === "Escape"){

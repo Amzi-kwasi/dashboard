@@ -72,6 +72,7 @@ function SaveChanges(){
   var editaddress=document.getElementById("address").value;
   var editphone=document.getElementById("phone").value;
   var editemail=document.getElementById("email").value;
+  var editusername=document.getElementById("username").value;
    
   
   
@@ -83,6 +84,7 @@ function SaveChanges(){
   localStorage.setItem("address" , editaddress)
   localStorage.setItem("phone" , editphone)
   localStorage.setItem("email" , editemail)
+  localStorage.setItem("username" , editusername)
 
 
   window.location.reload();
@@ -115,6 +117,7 @@ function Profile(){
     document.getElementById("address").value=localStorage.getItem("address");
     document.getElementById("phone").value=localStorage.getItem("phone");
     document.getElementById("email").value=localStorage.getItem("email");
+    document.getElementById("username").value=localStorage.getItem("username");
 
 
     
@@ -131,6 +134,7 @@ function Profile(){
     document.getElementById("overviewaddress").innerHTML=localStorage.getItem("address")
     document.getElementById("overviewphone").innerHTML=localStorage.getItem("phone")
     document.getElementById("overviewemail").innerHTML=localStorage.getItem("email")
+    document.getElementById("overviewusername").innerHTML=localStorage.getItem("username")
 
 
 
@@ -159,7 +163,7 @@ export default function UserSet() {
       <div className="card">
         <div className="card-body profile-card pt-4 d-flex flex-column align-items-center">
 
-          <img  alt="Profile Image" id="topimg" className="rounded-circle" />
+          <img  alt="Profile Image" src={require('../img/avatar.jpg')} id="topimg" className="rounded-circle" />
           <h2 id="topfullname"></h2>
           <h3 id="topjob"></h3>
          
@@ -239,6 +243,10 @@ export default function UserSet() {
                 <div className="col-lg-3 col-md-4 label">Email</div>
                 <div className="col-lg-9 col-md-8" id="overviewemail"></div>
               </div>
+              <div className="row">
+                <div className="col-lg-3 col-md-4 label">Username</div>
+                <div className="col-lg-9 col-md-8" id="overviewusername"></div>
+              </div>
 
             </div>
 
@@ -314,6 +322,13 @@ export default function UserSet() {
                   <label for="Email" className="col-md-4 col-lg-3 col-form-label">Email</label>
                   <div className="col-md-8 col-lg-9">
                     <input name="email" type="email" className="form-control" id="email" />
+                  </div>
+                </div>
+
+                <div className="row mb-3">
+                  <label for="username" className="col-md-4 col-lg-3 col-form-label">Username</label>
+                  <div className="col-md-8 col-lg-9">
+                    <input name="username" type="text" className="form-control" id="username" />
                   </div>
                 </div>
 

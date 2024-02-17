@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import Button from "../component/button";
 import Dev from "./developer";
 
+
+
 function Alrt(){
   alert("Sign In")
 
@@ -14,8 +16,7 @@ function Alrt(){
 
 function Home() {
 var username= localStorage.getItem("username");
-
-    return(
+ return(
     <>
     <Head />
 
@@ -25,56 +26,43 @@ var username= localStorage.getItem("username");
     <Button />
     </Link>
 
-    <br/>
-    <br/>
-    <br/>
-{/*     
-    <Link to="/register">
-    <p style={{color:"orange",left:"10px",position:"absolute",top:"50px"}}>Sign Up</p>
-    </Link> */}
-
-
-    <Link to="/">
-        <p style={{color:"green",right:"10px",position:"absolute",top:"50px"}}>Sign In</p>
-    </Link>
-        
-<br/>
-<br/>
-
-    <p style={{textAlign:"center",color:"grey"}}>Account</p>
-
+ 
+   
 {/* 
     accounnt block */}
 
-    <div className="div">
-    <div className="acc-block">
-     <a>{username}</a>
-     
-     <br/>
-     <br/>
-     <br/>
-     <br/>
-     <p>userid</p>
-     <p>acc type</p>
-     <p>amount</p>
+<div className="account">
+    <div className="account-div" style={{color:"white"}}>
+     <p style={{fontSize:"20px", paddingTop:"20px"}}>Hi, {username}</p>
+     <img id="accimg" src={localStorage.getItem('topimg')} />
+     <p>Account</p>
+
+    <div className="account-display">
+    <a>Checking...</a> 
+    
+    <a style={{position:"absolute",right:"80px"}}>GHC</a>
+    
+    <p style={{paddingTop:"10px",position:"absolute",right:"60px"}}>Available</p>
+    <br/>
+    <br/>
     </div>
+
+    <p>User ID</p>
+
+<div className="account-display">
+<a>0000000...</a> 
+
+</div>
+<br/>
+</div>
     </div>
-  
-
-  <br/>
-  <br/>
-  <br/>
-
-
-  <center>
-    <p style={{color:"grey"}}>Operations</p>
-  </center>
-
-  <br/>
 
 
 
-
+<center>
+<div className="div-opp">
+    <br/>
+<p>Operation</p>
   <div className="opp-row">
     <div className="operations">
         <center>
@@ -103,9 +91,9 @@ var username= localStorage.getItem("username");
     <center>
 <div className="opera" onClick={Alrt} style={{color:"white",width:"75px",cursor:"pointer",borderRadius:"8px",height:"90px",background:"#f29d78",boxShadow:"2px 2px 10px 1px #a3a3a3"}}>
 <center>
-    <a><i className="fa fa-refresh" style={{color:"white",paddingTop:"20px"}}></i></a>
+    <a><i className="fa fa-vcard-o" style={{color:"white",paddingTop:"20px"}}></i></a>
     
-    <p style={{fontSize:"12px"}}>Switch Account</p>
+    <p style={{fontSize:"12px"}}>Loan Application</p>
 </center>
 
 </div>
@@ -113,6 +101,12 @@ var username= localStorage.getItem("username");
     </div>
   </div>
 
+
+
+  </div> 
+  </center>
+
+{/* 
   <div className="opp-row">
     <div className="operations">
         <center>
@@ -149,7 +143,7 @@ var username= localStorage.getItem("username");
 </center>
     </div>
   </div>
-  
+   */}
 
   <br/>
   <br/>

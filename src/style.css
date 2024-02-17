@@ -22,7 +22,7 @@ a, p, i {
 
 .header {
     padding: 10px 12px;
-    background-color: #4aa1f2;
+    background-color: #1D1E1F;
     color: white;
     z-index: 9;
     position: fixed;
@@ -30,23 +30,81 @@ a, p, i {
     top: 0;
 }
 
-.div{
-    margin-left: 20px;
-    margin-right: 20px;
-    margin-top: 15px;
-}
-
-.acc-block{
-    background-color: #1a1a1a;
-    z-index: 9;
+.account{
+    background-image: url(./img/bg2.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    top: 40px;
+    width: 100%;
     color: white;
-    border-radius: 10px;
     height: auto;
     padding-left: 20px;
     padding-top: 20px;
-    padding-bottom: 20px;
+    padding-bottom: 50px;
     padding-right: 20px;
-    box-shadow: 2px 2px 20px 1px #636262;
+    }
+
+#accimg{
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  right: 30px;
+ border-radius: 50%;
+ border: none;
+ background: none;
+ vertical-align: middle;
+ top: 30px;
+ animation-name: accimg;
+ animation-duration: 3s;
+ animation-timing-function: linear;
+ animation-iteration-count: infinite;
+ animation-direction: alternate;
+}
+
+@keyframes accimg{
+  0%{
+    opacity: 0.5;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+/* 
+    .account::before{
+      content: "";
+      background: rgba(0, 0, 0, 0.3);
+      position: absolute;
+      bottom: 0;
+      top: 0;
+      left: 0;
+      right: 0;
+    } */
+
+.div-opp{
+position: sticky;
+box-sizing: border-box;
+width: 90%;
+height: auto;
+z-index: 99;
+background: #FFFFFF;
+border: 1px solid rgba(0, 0, 0, 0.1);
+border-radius: 8px;
+padding-top: 30px;
+padding-bottom: 30px;
+}
+
+ 
+
+.account-display{
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  background: rgba(17, 18, 18, 0.88);
+
 }
 
 .fa {
@@ -155,6 +213,27 @@ background: none;
 	border:none;
 }
 
+
+.wifi{
+  text-decoration: none;
+  color: white;
+  position: absolute;
+  right: 50px;
+  animation-name: wifi;
+  animation-duration: 3s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes wifi{
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
 
 .entry{
   margin-top: 250px;

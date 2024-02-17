@@ -38,15 +38,18 @@ function Formd(){
 setTimeout(()=>{
   var firstload=localStorage.getItem("first");
 
-  if(firstload == "1"){
+  if(firstload != "1"){
     document.getElementById("fd").style.display="block";
-
+    
+    document.getElementById("entry").style.display="none";
+    localStorage.setItem("first","1");
   }
   else{
-    document.getElementById("fd").style.display="none";
-    document.getElementById("entry").style.display="block";
    
-    localStorage.setItem("first","1");
+    document.getElementById("fd").style.display="none";
+    
+    document.getElementById("entry").style.display="block";
+    
   }
   document.getElementById("username").value= localStorage.getItem("username");
 
