@@ -86,8 +86,8 @@ function SaveChanges(){
   localStorage.setItem("email" , editemail)
   localStorage.setItem("username" , editusername)
 
-
-  window.location.reload();
+alert("Saved")
+  // window.location.reload();
 }
 
 
@@ -380,7 +380,9 @@ export default function UserSet() {
                 </div>
 
                 <div className="text-center">
+                  <Link to="/usersettings">
                   <button type="submit" className="btn btn-primary">Save Changes</button>
+                  </Link>
                 </div>
               </form>
 
