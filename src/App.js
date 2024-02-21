@@ -4,8 +4,8 @@ import Home from "./pages/home.jsx";
 import UserSet from "./pages/usersettings.jsx";
 import Error from "./pages/404page.jsx";
 import Contact from "./pages/contact.jsx";
-import SignLog from "./component/sign_login.js"
-
+import SignLog from "./component/sign_login.js";
+import Faq from "./pages/faq.js";
 
 function App() {
   return (
@@ -17,6 +17,7 @@ function App() {
     <Route path="usersettings" element={<UserSet />} />
     <Route path="/" element={<Error />} />
     <Route path="contact" element={<Contact />} />
+    <Route path="faq" element={<Faq />} />
     </Route>
 </Routes>
 </BrowserRouter>

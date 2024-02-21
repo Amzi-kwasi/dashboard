@@ -364,6 +364,40 @@ background: none;
   color: #ffffff;
 }
 
+.br{
+  display: none;
+}
+
+.top-nav{
+  display: none;
+}
+
+@media only screen and (min-width:700px){
+  .bottom-nav{
+    display: none;
+  }
+
+  .br{
+    display: block;
+  }
+  .top-nav{
+    display:flex;
+    justify-content: center;
+    position: fixed;
+    top: 40px;
+    z-index: 999;
+    background-color: black;
+    width: 100%;
+    padding: 10px 12px;
+    color: white;
+  }
+  .top-nav a{
+    padding: 8px 25px;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+  }
+}
 
 .bottom-nav a{
   padding: 10px 12px;
@@ -685,9 +719,9 @@ a.google span{
   color: #232836;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 800px) {
   .formpage{
-      padding: 20px 10px;
+    width: 90%;
   }
   
 }
@@ -719,7 +753,8 @@ a.google span{
 }
 
 .contact .contact-info a {
-  color: #000;
+  color: green;
+  text-decoration: none;
 }
 
 .contact .contact-info a:hover {
@@ -822,4 +857,117 @@ a.google span{
   .contact .contact-email {
     padding: 20px 0;
   }
+}
+
+.faq .faq-list {
+  padding: 0 100px;
+}
+
+.faq .faq-list ul {
+  padding: 0;
+  list-style: none;
+}
+
+.faq .faq-list li+li {
+  margin-top: 15px;
+}
+
+.faq .faq-list li {
+  padding: 20px;
+  background: #fff;
+  border-radius: 4px;
+  position: relative;
+}
+
+.faq .faq-list a {
+  display: block;
+  position: relative;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+  padding: 0 30px;
+  outline: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.fa-chevron-down{
+  color: orange;
+  font-weight: 700;
+  font: smaller;
+}
+
+.faq .faq-list .icon-help {
+  font-size: 24px;
+  position: absolute;
+  right: 0;
+  left: 20px;
+  color: #9cdc66;
+}
+
+.faq .faq-list .icon-show,
+.faq .faq-list .icon-close {
+  font-size: 24px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.faq .faq-list p {
+  margin-bottom: 0;
+  padding: 10px 0 0 0;
+}
+
+.faq .faq-list .icon-show {
+  display: none;
+}
+
+.faq .faq-list a.collapsed {
+  color: #343a40;
+}
+
+.faq .faq-list a.collapsed:hover {
+  color: #5c9f24;
+}
+
+.faq .faq-list a.collapsed .icon-show {
+  display: inline-block;
+}
+
+.faq .faq-list a.collapsed .icon-close {
+  display: none;
+}
+
+@media (max-width: 1200px) {
+  .faq .faq-list {
+    padding: 0;
+  }
+}
+
+
+section {
+  padding: 60px 0;
+}
+
+.section-bg {
+  background-color: #f1f1f1;
+}
+
+.section-title {
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.section-title h2 {
+  font-size: 32px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  padding-bottom: 0;
+  color: #5c9f24;
+}
+
+.section-title p {
+  margin-bottom: 0;
 }

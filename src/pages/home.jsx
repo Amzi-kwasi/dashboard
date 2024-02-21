@@ -36,7 +36,7 @@ var username= localStorage.getItem("username");
 
 <Dev />
 
-<BottomNav home={{color:"lightgreen"}}/>
+<BottomNav home={{color:"orange"}}/>
 
     <Link to="/usersettings">
     <Button />

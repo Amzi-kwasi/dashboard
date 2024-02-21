@@ -86,8 +86,9 @@ function SaveChanges(){
   localStorage.setItem("email" , editemail)
   localStorage.setItem("username" , editusername)
 
-alert("Saved")
-  // window.location.reload();
+
+  alert("Saved")
+
 }
 
 
@@ -109,6 +110,13 @@ function ChangeImage(){
 
 function Profile(){
   setTimeout(()=>{
+
+    var firstchance=localStorage.getItem("fst");
+    if(firstchance != "1"){
+      alert("Make sure you save changes after editing your profile!");
+
+      localStorage.setItem("fst", "1");
+    }
     document.getElementById("fullname").value=localStorage.getItem("fulln");
     document.getElementById("about").value=localStorage.getItem("about");
     document.getElementById("company").value=localStorage.getItem("company");
@@ -257,14 +265,14 @@ export default function UserSet() {
             <div className="hide profile-edit pt-3" id="profile-edit">
 
               
-              <form>
+              <form action="#">
                 <div className="row mb-3">
                   <label for="profileImage" className="col-md-4 col-lg-3 col-form-label">Profile Image</label>
                   <div className="col-md-8 col-lg-9">
                     <input type="file" onChange={ChangeImage} id="image-input" accept="image"/>
                     <div className="pt-2">
                       <label for="image-input"><a className="btn btn-primary btn-sm" title="Upload new profile image"><i className="fa fa-upload"></i></a></label>
-                      <a href="#" className="btn btn-danger btn-sm" title="Remove my profile image" onClick={()=>{localStorage.removeItem("topimg"); window.location.reload()}}><i className="fa fa-trash-o"></i></a>
+                      <a href="#" className="btn btn-danger btn-sm" title="Remove my profile image" onClick={()=>{localStorage.removeItem("topimg")}}><i className="fa fa-trash-o"></i></a>
                     </div>
                   </div>
                 </div>
@@ -279,66 +287,68 @@ export default function UserSet() {
                 <div className="row mb-3">
                   <label for="about" className="col-md-4 col-lg-3 col-form-label">About</label>
                   <div className="col-md-8 col-lg-9">
-                    <textarea name="about" className="form-control" id="about" style={{height: "100px"}}>Sunt est soluta temporibus accusantium neque nam maiores cumque temporibus. Tempora libero non est unde veniam est qui dolor. Ut sunt iure rerum quae quisquam autem eveniet perspiciatis odit. Fuga sequi sed ea saepe at unde.</textarea>
+                    <textarea name="about" className="form-control" id="about" onKeyUp={()=>{document.getElementById("overviewabout").innerHTML=document.getElementById("about").value}} style={{height: "100px"}}>Sunt est soluta temporibus accusantium neque nam maiores cumque temporibus. Tempora libero non est unde veniam est qui dolor. Ut sunt iure rerum quae quisquam autem eveniet perspiciatis odit. Fuga sequi sed ea saepe at unde.</textarea>
                   </div>
                 </div>
 
                 <div className="row mb-3">
                   <label for="company" className="col-md-4 col-lg-3 col-form-label">Company</label>
                   <div className="col-md-8 col-lg-9">
-                    <input name="company" type="text" className="form-control" id="company" />
+                    <input name="company" type="text" className="form-control" id="company" onKeyUp={()=>{document.getElementById("overviewcompany").innerHTML=document.getElementById("company").value}} />
                   </div>
                 </div>
 
                 <div className="row mb-3">
                   <label for="Job" className="col-md-4 col-lg-3 col-form-label">Job</label>
                   <div className="col-md-8 col-lg-9">
-                    <input name="job" type="text" className="form-control" id="job" />
+                    <input name="job" type="text" className="form-control" id="job" onKeyUp={()=>{document.getElementById("overviewjob").innerHTML=document.getElementById("job").value}} />
                   </div>
                 </div>
 
                 <div className="row mb-3">
                   <label for="Country" className="col-md-4 col-lg-3 col-form-label">Country</label>
                   <div className="col-md-8 col-lg-9">
-                    <input name="country" type="text" className="form-control" id="country" />
+                    <input name="country" type="text" className="form-control" id="country" onKeyUp={()=>{document.getElementById("overviewcountry").innerHTML=document.getElementById("country").value}} />
                   </div>
                 </div>
 
                 <div className="row mb-3">
                   <label for="Address" className="col-md-4 col-lg-3 col-form-label">Address</label>
                   <div className="col-md-8 col-lg-9">
-                    <input name="address" type="text" className="form-control" id="address"/>
+                    <input name="address" type="text" className="form-control" id="address" onKeyUp={()=>{document.getElementById("overviewaddress").innerHTML=document.getElementById("address").value}}/>
                   </div>
                 </div>
 
                 <div className="row mb-3">
                   <label for="Phone" className="col-md-4 col-lg-3 col-form-label">Phone</label>
                   <div className="col-md-8 col-lg-9">
-                    <input name="phone" type="number" className="form-control" id="phone" />
+                    <input name="phone" type="number" className="form-control" id="phone" onKeyUp={()=>{document.getElementById("overviewphone").innerHTML=document.getElementById("phone").value}}/>
                   </div>
                 </div>
 
                 <div className="row mb-3">
                   <label for="Email" className="col-md-4 col-lg-3 col-form-label">Email</label>
                   <div className="col-md-8 col-lg-9">
-                    <input name="email" type="email" className="form-control" id="email" />
+                    <input name="email" type="email" className="form-control" id="email" onKeyUp={()=>{document.getElementById("overviewemail").innerHTML=document.getElementById("email").value}}/>
                   </div>
                 </div>
 
                 <div className="row mb-3">
                   <label for="username" className="col-md-4 col-lg-3 col-form-label">Username</label>
                   <div className="col-md-8 col-lg-9">
-                    <input name="username" type="text" className="form-control" id="username" />
+                    <input name="username" type="text" className="form-control" id="username" onKeyUp={()=>{document.getElementById("overviewusername").innerHTML=document.getElementById("username").value}}/>
                   </div>
                 </div>
 
               
 
-                <div className="text-center">
-                  <button className="btn btn-primary" onClick={SaveChanges}>Save Changes</button>
-                </div>
               </form>
 
+              <div className="text-center">
+                <Link to="/usersettings">
+                  <button className="btn btn-primary" onClick={SaveChanges}>Save Changes</button>
+                </Link>
+                </div>
             </div>
 
 
@@ -380,9 +390,9 @@ export default function UserSet() {
                 </div>
 
                 <div className="text-center">
-                  <Link to="/usersettings">
+                  
                   <button type="submit" className="btn btn-primary">Save Changes</button>
-                  </Link>
+                  
                 </div>
               </form>
 
